@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Kasih Tersembunyi di Hasna Medika Karangasem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --bg-color: #f8f9fa;
+            --text-main: #2f3542;
+            --text-light: #57606f;
+            --card-bg: #ffffff;
+            --border-color: #f1f2f6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .hero-header {
+            position: relative;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 80px 40px;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .hero-header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8em;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            line-height: 1.3;
+            position: relative;
+            z-index: 2;
+        }
+
+        .meta {
+            margin-top: 20px;
+            font-size: 0.95em;
+            font-weight: 400;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Tata Letak Utama (Artikel + Sidebar) */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            padding: 50px;
+        }
+
+        .content p {
+            font-family: 'Lora', serif;
+            font-size: 1.15em;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .content p:first-of-type::first-letter {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: var(--primary);
+            float: left;
+            margin-right: 12px;
+            line-height: 1;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        .image-gallery img:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-quote {
+            background: linear-gradient(to right, rgba(255, 71, 87, 0.05), transparent);
+            border-left: 6px solid var(--primary);
+            padding: 25px 30px;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.3em;
+            color: var(--primary);
+            border-radius: 0 15px 15px 0;
+            font-family: 'Lora', serif;
+            position: relative;
+        }
+
+        .highlight-quote::before {
+            content: '"';
+            font-size: 4em;
+            position: absolute;
+            color: rgba(255, 71, 87, 0.1);
+            top: -10px;
+            left: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Gaya Sidebar */
+        .sidebar {
+            border-left: 1px solid var(--border-color);
+            padding-left: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .related-card {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .related-card:hover {
+            transform: translateX(4px);
+        }
+
+        .related-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .related-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .related-tag {
+            font-size: 0.75em;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .related-title {
+            font-size: 0.95em;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0 0 6px 0;
+            color: var(--text-main);
+        }
+
+        .related-card:hover .related-title {
+            color: var(--primary);
+        }
+
+        .related-date {
+            font-size: 0.8em;
+            color: var(--text-light);
+        }
+
+        .tags {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #ffeaa7;
+            color: #d63031;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f1f2f6;
+            font-size: 0.9em;
+            color: #747d8c;
+            border-top: 1px solid #dfe4ea;
+        }
+
+        /* Hiasan Hati Melayang */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            animation: float 6s ease-in-out infinite;
+            bottom: -30px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-200px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Penyesuaian Responsif Layar Kecil / HP */
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                padding-left: 0;
+                padding-top: 30px;
+            }
+
+            .hero-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="hero-header">
+            <div class="floating-hearts">
+                <div class="heart" style="left: 15%; animation-delay: 0s;">❤️</div>
+                <div class="heart" style="left: 35%; animation-delay: 2.5s;">💖</div>
+                <div class="heart" style="left: 65%; animation-delay: 1.2s;">💕</div>
+                <div class="heart" style="left: 85%; animation-delay: 3.8s;">💗</div>
+            </div>
+            <h1>Diam-Diam Jatuh Cinta: Kemesraan Pasangan Muda di Hasna Medika Karangasem</h1>
+            <div class="meta">Dipublikasikan: Hari Ini | Reporter: Tim Sekilas Info</div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Kolom Kiri: Artikel Utama -->
+            <article class="content">
+                <p>Suasana area Hasna Medika Karangasem yang biasanya lekat dengan kesibukan, kali ini menyimpan sebuah
+                    cerita manis yang tak terduga. Sebuah momen terekam kamera, memperlihatkan sepasang muda-mudi yang
+                    tampak begitu asyik bermesraan di sela-sela waktu. Siapa sangka, di balik rutinitas harian yang
+                    padat,
+                    benih-benih cinta diam-diam bersemi di antara mereka berdua.</p>
+
+                <p>Dari tangkapan gambar yang ada, terlihat jelas raut kebahagiaan terpancar di wajah keduanya. Sang
+                    pria
+                    yang mengenakan pakaian serba hitam tampak begitu nyaman mengobrol, melontarkan candaan yang
+                    disambut
+                    dengan tawa lepas dan senyum tersipu malu dari sang wanita. Ada momen manis di mana keduanya tampak
+                    saling berpegangan tangan. Keduanya seolah memiliki dunia sendiri, larut dalam obrolan hangat bak
+                    sepasang kekasih yang tengah dimabuk asmara.</p>
+
+                <div class="highlight-quote">
+                    "Cinta memang tak pernah bisa ditebak kapan dan di mana ia akan datang. Bahkan di tengah kesibukan
+                    sekalipun, asmara bisa tumbuh dengan suburnya secara diam-diam."
+                </div>
+
+                <div class="image-gallery">
+                    <img src="images/wira 1.jpeg" alt="Momen Manis di Klinik">
+                    <img src="images/wira 2.jpeg" alt="Kedekatan Pasangan Muda">
+                    <img src="images/wira 3.jpeg" alt="Pasangan Asyik Ngobrol">
+                </div>
+
+                <p>Menurut desas-desus, hubungan kedua sejoli ini memang sengaja ditutupi atau menjalin hubungan secara
+                    <em>backstreet</em> (diam-diam). Mungkin ada alasan tertentu mengapa mereka memilih untuk tidak
+                    mengumbarnya, atau sekadar ingin menikmati masa-masa pendekatan yang mendebarkan tanpa menjadi
+                    sorotan
+                    banyak orang. Namun, pepatah mengatakan bahwa cinta tidak bisa disembunyikan. Gestur tubuh,
+                    kedekatan
+                    fisik, dan tatapan mata mereka akhirnya berbicara lebih keras daripada kata-kata.
+                </p>
+
+                <p>Kejadian ini tentu saja menambah cerita dan warna tersendiri. Banyak yang merasa gemas melihat
+                    tingkah
+                    laku keduanya. Kita doakan saja, semoga kisah cinta yang dirajut secara sembunyi-sembunyi ini
+                    membawa
+                    kebahagiaan bagi mereka berdua, tanpa mengganggu aktivitas dan tanggung jawab masing-masing.</p>
+
+                <p>Kira-kira, kapan ya pasangan manis ini akan mulai <em>go public</em> dan membagikan kebahagiaan
+                    mereka
+                    secara terang-terangan? Kita tunggu saja kabar baiknya!</p>
+
+                <div class="tags">
+                    <span class="tag">#Asmara</span>
+                    <span class="tag">#Gesek - Gesek Asyik</span>
+                    <span class="tag">#Gossip</span>
+                    <span class="tag">#Karangasem</span>
+                </div>
+            </article>
+
+            <!-- Kolom Kanan: Sidebar Berita Lainnya -->
+            <aside class="sidebar">
+                <h3 class="sidebar-title">Berita Terkait</h3>
+
+                <a href="cowok_ganteng.html" class="related-card">
+                    <img src="images/daftar cowok ganteng.jpg" alt="Berita Populer">
+                    <div class="related-info">
+                        <span class="related-tag">Gossip</span>
+                        <h4 class="related-title">5 Cowok Terganteng, Versi Majalah Pria</h4>
+                        <span class="related-date">Kemarin</span>
+                    </div>
+                </a>
+
+                <a href="index.html" class="related-card">
+                    <img src="images/wira 2.jpeg" alt="Berita Kesehatan">
+                    <div class="related-info">
+                        <span class="related-tag">Kesehatan</span>
+                        <h4 class="related-title">Tips Membangun Otot Ala "Coach Wira"</h4>
+                        <span class="related-date">2 Hari Lalu</span>
+                    </div>
+                </a>
+
+                <a href="pengusaha_sukses.html" class="related-card">
+                    <img src="images/wira 3.jpeg" alt="Berita Komunitas">
+                    <div class="related-info">
+                        <span class="related-tag">bisnis</span>
+                        <h4 class="related-title">Dari Security Sampai Menjadi Pengusaha Nasi Bungkus di Hasna Medika Karangasem - Pak Gede Budiarta</h4>
+                        <span class="related-date">3 Hari Lalu</span>
+                    </div>
+                </a>
+
+                <a href="#" class="related-card">
+                    <img src="images/wira 1.jpeg" alt="Berita Gaya Hidup">
+                    <div class="related-info">
+                        <span class="related-tag">Gaya Hidup</span>
+                        <h4 class="related-title">Tanda-Tanda Pasangan Mengisyaratkan Hubungan 'Backstreet'</h4>
+                        <span class="related-date">4 Hari Lalu</span>
+                    </div>
+                </a>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            &copy; 2026 Sekilas Info Karangasem. Semua Hak Cipta Dilindungi.
+        </footer>
+    </div>
+
+</body>
+
+</html>
